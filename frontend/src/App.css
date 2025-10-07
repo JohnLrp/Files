@@ -1,3 +1,7 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -6,8 +10,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+
 .form-container {
-  width: 90%; /* Adjust this percentage to make it wider or narrower */
+  width: 90%;
+  /* Adjust this percentage to make it wider or narrower */
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
@@ -39,10 +45,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 /* Reset and global */
 * {
   box-sizing: border-box;
@@ -61,14 +69,16 @@ html {
   max-width: 100%;
   min-width: auto;
   max-width: auto;
-  margin: 0 auto; /* horizontal center */
+  margin: 0 auto;
+  /* horizontal center */
   padding: 0;
 }
 
 .container2 {
   max-width: 100%;
   min-height: 100%;
-  margin: 0 auto; /* horizontal center */
+  margin: 0 auto;
+  /* horizontal center */
   padding: 0;
 }
 

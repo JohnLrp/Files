@@ -32,8 +32,15 @@
   font-size: 1.1rem;
 }
 
-.get-started-btn {
+.home-buttons {
   margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.get-started-btn,
+.services-btn {
   background-color: #ffd700;
   border: none;
   padding: 12px 30px;
@@ -44,7 +51,8 @@
   transition: background-color 0.3s ease;
 }
 
-.get-started-btn:hover {
+.get-started-btn:hover,
+.services-btn:hover {
   background-color: #e6c200;
 }
 

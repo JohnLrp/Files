@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Service from './components/Service';
 import ContactPage from './components/ContactPage';
 import About from './components/about';
 import Footer from './components/Footer';
+import Courses from './components/Courses';
+import ClassDetail from './components/ClassDetail';
 import './index.css';
 import './App.css';
 
@@ -25,18 +28,26 @@ function App() {
 
   return (
     <div className="App">
-      {showAuth ? (
-        <AuthContainer mode={authMode} onBackToHome={handleShowHome} />
-      ) : (
-        <>
-          <Navbar onLoginClick={() => handleShowAuth('login')} onSignupClick={() => handleShowAuth('signup')} />
-          <Home />
-          <Service />
-          <About />
-          <ContactPage />
-          <Footer />
-        </>
-      )}
+      <Routes>
+        <Route path="/" element={
+          <>
+            {showAuth ? (
+              <AuthContainer mode={authMode} onBackToHome={handleShowHome} />
+            ) : (
+              <>
+                <Navbar onLoginClick={() => handleShowAuth('login')} onSignupClick={() => handleShowAuth('signup')} />
+                <Home />
+                <Service />
+                <About />
+                <ContactPage />
+                <Footer />
+              </>
+            )}
+          </>
+        } />
+        <Route path="/courses" element={<><Navbar onLoginClick={() => handleShowAuth('login')} onSignupClick={() => handleShowAuth('signup')} /><Courses /></>} />
+        <Route path="/class/:id" element={<><Navbar onLoginClick={() => handleShowAuth('login')} onSignupClick={() => handleShowAuth('signup')} /><ClassDetail /></>} />
+      </Routes>
     </div>
   );
 }
