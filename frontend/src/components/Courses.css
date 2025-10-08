@@ -189,6 +189,11 @@
   justify-content: space-between;
 }
 
+.wide-streams-grid:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
 .wide-streams-grid .stream-card {
   flex: 1;
 }
