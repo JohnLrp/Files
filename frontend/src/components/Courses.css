@@ -172,7 +172,27 @@
   color: #333;
 }
 
-/* Responsive */
+/* -------- Wide Course Card for Class 11 & 12 -------- */
+.wide-course-card {
+  background: #fffefa;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-top: 20px;
+  width: 100%;
+}
+
+.wide-streams-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.wide-streams-grid .stream-card {
+  flex: 1;
+}
+
 @media (max-width: 768px) {
   .courses-content-wrapper {
     padding-top: 45px;
@@ -188,5 +208,9 @@
 
   .courses-grid {
     grid-template-columns: 1fr;
+  }
+
+  .wide-streams-grid {
+    flex-direction: column;
   }
 }

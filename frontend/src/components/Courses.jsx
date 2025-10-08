@@ -82,6 +82,10 @@ const Courses = () => {
     },
   ];
 
+  const class8to10 = courses.filter((c) => c.id <= 3);
+  const class11 = courses.find((c) => c.id === 4);
+  const class12 = courses.find((c) => c.id === 5);
+
   return (
     <div className="courses-section">
       <div className="courses-container">
@@ -98,64 +102,101 @@ const Courses = () => {
             ←
           </button>
 
-          {/* course grid */}
+          {/* Grid for Class 8, 9, 10 */}
           <div className="courses-grid">
-            {courses.map((course) => (
+            {class8to10.map((course) => (
               <div key={course.id} className="course-card">
                 <div className="course-header">
                   <h2 className="course-title">{course.title}</h2>
                   <span className="course-price">₹{course.price}</span>
                 </div>
-
                 <p className="course-description">{course.description}</p>
-
-                {course.streams ? (
-                  <div className="streams-section">
-                    <h3>Streams</h3>
-                    <div className="streams-grid">
-                      {course.streams.map((stream) => (
-                        <div key={stream.id} className="stream-card">
-                          <h4 className="stream-name">{stream.name}</h4>
-                          <p className="stream-description">
-                            {stream.description}
-                          </p>
-                          <div className="course-buttons">
-                            <button
-                              onClick={() => navigate(`/enroll/${stream.id}`)}
-                              className="enroll-btn"
-                            >
-                              Enroll
-                            </button>
-                            <button
-                              onClick={() => navigate(`/class/${stream.id}`)}
-                              className="details-btn"
-                            >
-                              Details
-                            </button>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <div className="course-buttons">
-                    <button
-                      onClick={() => navigate(`/enroll/${course.id}`)}
-                      className="enroll-btn"
-                    >
-                      Enroll
-                    </button>
-                    <button
-                      onClick={() => navigate(`/class/${course.id + 7}`)}
-                      className="details-btn"
-                    >
-                      Details
-                    </button>
-                  </div>
-                )}
+                <div className="course-buttons">
+                  <button
+                    onClick={() => navigate(`/enroll/${course.id}`)}
+                    className="enroll-btn"
+                  >
+                    Enroll
+                  </button>
+                  <button
+                    onClick={() => navigate(`/class/${course.id + 7}`)}
+                    className="details-btn"
+                  >
+                    Details
+                  </button>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Class 11 Wide Card */}
+          <div className="wide-course-card">
+            <div className="course-header">
+              <h2 className="course-title">{class11.title}</h2>
+              <span className="course-price">₹{class11.price}</span>
+            </div>
+            <p className="course-description">{class11.description}</p>
+            <div className="streams-section">
+              <h3>Streams</h3>
+              <div className="wide-streams-grid">
+                {class11.streams.map((stream) => (
+                  <div key={stream.id} className="stream-card">
+                    <h4 className="stream-name">{stream.name}</h4>
+                    <p className="stream-description">{stream.description}</p>
+                    <div className="course-buttons">
+                      <button
+                        onClick={() => navigate(`/enroll/${stream.id}`)}
+                        className="enroll-btn"
+                      >
+                        Enroll
+                      </button>
+                      <button
+                        onClick={() => navigate(`/class/${stream.id}`)}
+                        className="details-btn"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Class 12 Wide Card */}
+          <div className="wide-course-card">
+            <div className="course-header">
+              <h2 className="course-title">{class12.title}</h2>
+              <span className="course-price">₹{class12.price}</span>
+            </div>
+            <p className="course-description">{class12.description}</p>
+            <div className="streams-section">
+              <h3>Streams</h3>
+              <div className="wide-streams-grid">
+                {class12.streams.map((stream) => (
+                  <div key={stream.id} className="stream-card">
+                    <h4 className="stream-name">{stream.name}</h4>
+                    <p className="stream-description">{stream.description}</p>
+                    <div className="course-buttons">
+                      <button
+                        onClick={() => navigate(`/enroll/${stream.id}`)}
+                        className="enroll-btn"
+                      >
+                        Enroll
+                      </button>
+                      <button
+                        onClick={() => navigate(`/class/${stream.id}`)}
+                        className="details-btn"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
